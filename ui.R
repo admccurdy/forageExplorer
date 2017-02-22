@@ -17,9 +17,9 @@ shinyUI(fluidPage(
   
   # Sidebar with a slider input for number of bins
   sidebarLayout(
-    sidebarPanel(
+    sidebarPanel(width = 2,
       lapply(1:x, function(i) {
-        numericInput(dynamicInputs[i,'id'], dynamicInputs[i,'name'],dynamicInputs[i,'value'], step = .2)
+        numericInput(dynamicInputs[i,'id'], dynamicInputs[i,'name'],dynamicInputs[i,'value'], step = .1)
       }),
       # numericInput("adaptRatio", "Adaptation Ratio", 1, 0, 1, .1),
       numericInput("carryingCap", "Carrying Capacity Ratio", 1, min = 0, step = .1),
