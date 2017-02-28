@@ -33,10 +33,10 @@ shinyServer(function(input, output) {
                                                              droughtForage[i] * input$adaptLvl,
                                                              actualForage[i]) / input$carryingCap)
       
-      if(forageFrame$rainIndex[i] > input$adaptLvl & 
+      if(forageFrame$rainIndex[i] >= input$adaptLvl & 
          forageFrame$rainIndex[i] < 1){
         forageFrame$Gt[i] <- 1 - forageFrame$finalForage[i] +
-          forageFrame$finalForage[i] * (1 - (forageFrame$rainIndex[i] - (1-input$adaptLvl))/
+          forageFrame$finalForage[i] * (1 - (forageFrame$rainIndex[i])/
                                           forageFrame$rainIndex[i])
       }else{
         forageFrame$Gt[i] <- 1 - forageFrame$finalForage[i]
